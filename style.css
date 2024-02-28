@@ -22,7 +22,8 @@ body {
   margin: 0;
   height: 100vh;
   width: 100vw;
-  background: url('./modules/mapp.jpg')
+  background: url('./modules/mapp.jpg');
+
 }
 
 #map {
