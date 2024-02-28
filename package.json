@@ -1,0 +1,17 @@
+{
+  "name": "map-portal",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.0.12"
+  },
+  "dependencies": {
+    "ol": "latest",
+    "ol-layerswitcher": "^4.1.1",
+    "parcel": "^2.11.0"
+  }
+}

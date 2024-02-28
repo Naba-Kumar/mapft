@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+
+
+  <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./lib/dist/ol-ext.min.css">
+  <!-- <link rel="stylesheet" href="./modules/style.css"> -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./sidebar.css">
+  <link rel="stylesheet" href="./mediaStyle.css">
+  <title>Using OpenLayers with Vite</title>
+</head>
+
+<body>
+
+
+
+  <div class="container">
+    <nav id="nav_bar">
+
+
+      <button type="button" class="menu_sidebar_container-toggle">
+        <div id="menu_open" class="material-symbols-outlined">menu</div>
+        <div id="menu_close" class="material-symbols-outlined">menu_open</div>
+      </button>
+      <div id="logo">
+        <img src="https://assac.in/img/fav.png" alt="">
+      </div>
+      <div id="nav_title">
+        <h2>ASSAM STATE SPACE APPLICATION CENTER</h2>
+
+      </div>
+    </nav>
+
+    <div class="menu_sidebar_container">
+
+
+      <nav class="menu">
+
+        <ul class="side_menu_cat1">
+          <div class="side_menu_container_optins">
+
+            <li onclick="display_toggle_block('admin_state')">Admin Satate</li>
+            <ul class="side_menu_optin_block, side_menu_cat2" id="admin_state">
+
+              <li onclick="display_toggle_block('Boudaries')">Boudaries</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Boudaries">
+                <li> <input type="checkbox" name="sb"> <label for="sb" namse="sb"></label> State Boundary</a></li>
+                <li> <input type="checkbox"> <label for="District Boundary"></label> District Boundary</a></li>
+                <li> <input type="checkbox"> <label for="Taluka Boundary"></label> Taluka Boundary</a></li>
+                <li> <input type="checkbox"> <label for="Village Boundary"></label> Village Boundary</a></li>
+                <li> <input type="checkbox"> <label for="Grampanchayat"></label> Grampanchayat</a></li>
+
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Transport')">Transport</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Transport">
+                <li> <input type="checkbox"> State Highway</li>
+                <li> <input type="checkbox"> Major Roads</li>
+                <li> <input type="checkbox"> Major State Highway</li>
+                <li> <input type="checkbox"> Major State Highway</li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Forest')">Forest</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Forest">
+                <li> <input type="checkbox"> <label for=""> Forest1 </label></li>
+                <li> <input type="checkbox"> <label for=""> Forest2 </label></li>
+                <li> <input type="checkbox"> <label for=""> Forest3 </label></li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Water')">Water</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Water">
+                <li> <input type="checkbox"> <label for="">w1</label> </li>
+                <li> <input type="checkbox"> <label for="">w2</label> </li>
+                <li> <input type="checkbox"> <label for="">w3</label> </li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Soil')">Soil</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Soil">
+                <li> <input type="checkbox"> <label for="">s1</label> </li>
+                <li> <input type="checkbox"> <label for="">s2</label> </li>
+                <li> <input type="checkbox"> <label for="">s3</label> </li>
+              </ul>
+              </li>
+
+
+
+              <li onclick="display_toggle_block('Electoral')">Electoral</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Electoral">
+                <li> <input type="checkbox"> <label for=""> Loksabha Boundaries</label></li>
+                <li> <input type="checkbox"> <label for=""> Assembly Boundaries</label></li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Anganwadi')">Anganwadi</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Anganwadi">
+                <li> <input type="checkbox"> <label for=""> A1 </label></li>
+                <li> <input type="checkbox"> <label for=""> A2 </label></li>
+                <li> <input type="checkbox"> <label for=""> A3 </label></li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Hospital')">Hospital Loaction</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Hospital">
+                <li> <input type="checkbox"> <label for=""> District Hospital </label></li>
+                <li> <input type="checkbox"> <label for=""> Government Hospital </label></li>
+                <li> <input type="checkbox"> <label for=""> Institute </label></li>
+                <li> <input type="checkbox"> <label for=""> Primary Health Center </label></li>
+                <li> <input type="checkbox"> <label for=""> Rural Hospital </label></li>
+                <li> <input type="checkbox"> <label for=""> Ridgecrest Regional Hospital </label></li>
+                <li> <input type="checkbox"> <label for=""> Subdistrict Hospital 50 </label></li>
+                <li> <input type="checkbox"> <label for=""> Subdistrict Hospital 100 </label></li>
+                <li> <input type="checkbox"> <label for=""> Trauma Care Unit </label></li>
+                <li> <input type="checkbox"> <label for=""> Urban Community Health Center </label></li>
+                <li> <input type="checkbox"> <label for=""> Urban Primary Health Center </label></li>
+                <li> <input type="checkbox"> <label for=""> Women Hospital </label></li>
+
+
+
+
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('School')">School</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="School">
+                <li> <input type="checkbox"> <label for=""> School1 </label></li>
+                <li> <input type="checkbox"> <label for=""> School2 </label></li>
+                <li> <input type="checkbox"> <label for=""> School3 </label></li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('MIDC')">MIDC Location</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="MIDC">
+                <li> <input type="checkbox"> <label for=""> MIDC1 </label></li>
+                <li> <input type="checkbox"> <label for=""> MIDC2 </label></li>
+                <li> <input type="checkbox"> <label for=""> MIDC3 </label></li>
+              </ul>
+              </li>
+
+              <li onclick="display_toggle_block('Warehouse')">Warehouse Location</li>
+              <ul class="side_menu_optin_block, side_menu_cat3" id="Warehouse">
+                <li> <input type="checkbox"> <label for=""> Warehouse1 </label></li>
+                <li> <input type="checkbox"> <label for=""> Warehouse2 </label></li>
+                <li> <input type="checkbox"> <label for=""> Warehouse3 </label></li>
+              </ul>
+              </li>
+
+            </ul>
+          </div>
+          <div class="side_menu_container_optins">
+            <li onclick="display_toggle_block('search')">Search</li>
+            <div class="side_menu_cat2" id="search">
+              <label for="district">District:</label>
+              <select id="districtrs" name="district">
+                <option value="d1">Darrang</option>
+                <option value="d2">Kamrup</option>
+                <option value="d3">Sunitpur</option>
+                <option value="d4">Udalguri</option>
+              </select>
+              <br>
+
+              <label for="Village">Village:</label>
+              <select id="Village" name="Village">
+                <option value="v1">v1</option>
+                <option value="v2">v2</option>
+                <option value="v3">v3</option>
+                <option value="v4">v3</option>
+              </select>
+              <br>
+
+              <input type="submit" value="submit">
+
+            </div>
+          </div>
+          <div class="side_menu_container_optins">
+            <li onclick="display_toggle_block('upload')">Upload</li>
+            <div class="side_menu_cat2" id="upload">
+              <label for="">Choose Shapefile</label>
+              <input type="file">
+              <input type="submit" value="submit">
+
+            </div>
+          </div>
+
+          <div class="side_menu_container_optins">
+            <li onclick="display_toggle_block('geocode')">Geocode Locator</li>
+            <div class="select-container, side_menu_cat2" id="geocode">
+              <label for="Search_area">Search : </label>
+              <input type="text" placeholder="Find Address or Place">
+              <br>
+              <input type="submit" value="submit">
+            </div>
+
+          </div>
+
+          <div class="side_menu_container_optins">
+            <li onclick="display_toggle_block('Swipe')">Swipe Tool</li>
+            <div class="select-container, side_menu_cat2" id="Swipe">
+              <select id="layerSelect">
+                <option value="Terrain"> Terrain</option>
+                <option value="Forest">Forest</option>
+              </select>
+              <br>
+              <input type="submit" value="Swipe">
+              <input type="reset" value="Clear">
+            </div>
+
+          </div>
+
+
+
+
+        </ul>
+      </nav>
+      <div id="sidebar">
+        <ul>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">zoom_in</span>
+          </li>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">zoom_out</span>
+
+          </li>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">home</span>
+
+          </li>
+          <li class="sidebar_items" onclick="fullscreen_click()">
+            <span class="material-symbols-outlined" id="fullscreen_in">fullscreen</span>
+            <span class="material-symbols-outlined" id="fullscreen_out">Fullscreen_exit</span>
+
+          </li>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined" onclick="display_toggle('edit_tool')">edit</span>
+            <ul id="edit_tool">
+              <li><span class="material-symbols-outlined">radio_button_checked</span></li>
+              <li><span class="material-symbols-outlined">timeline</span></li>
+              <li><span class="material-symbols-outlined">hexagon</span></li>
+              <li><span class="material-symbols-outlined">circle</span></li>
+              <li><span class="material-symbols-outlined">undo</span></li>
+            </ul>
+
+          </li>
+          <li class="sidebar_items" onclick="display_toggle('measure_tool')">
+            <span class="material-symbols-outlined">query_stats</span>
+            <ul id="measure_tool">
+              <li><span class="material-symbols-outlined">straighten</span></li>
+              <li><span class="material-symbols-outlined">square_foot</span></li>
+              <li><span class="material-symbols-outlined">ink_eraser</span></li>
+
+            </ul>
+
+          </li>
+
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">print</span>
+
+          </li>
+          <li class="sidebar_items" onclick="display_toggle_block('layers_tool')">
+            <span class="material-symbols-outlined">stacks</span>
+            <form id="layers_tool">
+
+              <div class="inputGroup">
+                <input type="checkbox" id="rivers" name="rivers" value="rivers_pgis"
+                  onchange="handleLayerToggle(event)">
+                <label for="rivers">rivers</label> <br>
+              </div>
+
+              <div class="inputGroup">
+                <input type="checkbox" id="india_st" name="india_st" value="india_st_pgis"
+                  onchange="handleLayerToggle(event)">
+                <label for="india_st">india states</label> <br>
+              </div>
+
+              <div class="inputGroup">
+                <input type="checkbox" id="dams" name="dams" value="indian_dams" onchange="handleLayerToggle(event)">
+                <label for="dams">dams</label> <br>
+              </div>
+
+              <div class="inputGroup">
+                <input type="checkbox" id="base" name="base" value="osmTile" checked
+                  onchange="handleLayerToggle(event)">
+                <label for="Base">OSM</label> <br>
+              </div>
+              <div class="inputGroup">
+                <input type="checkbox" id="rivers" name="rivers" value="rivers_pgis"
+                  onchange="handleLayerToggle(event)">
+                <label for="rivers">rivers</label> <br>
+              </div>
+
+              <div class="inputGroup">
+                <input type="checkbox" id="india_st" name="india_st" value="india_st_pgis"
+                  onchange="handleLayerToggle(event)">
+                <label for="india_st">india states</label> <br>
+              </div>
+
+              <div class="inputGroup">
+                <input type="checkbox" id="dams" name="dams" value="indian_dams" onchange="handleLayerToggle(event)">
+                <label for="dams">dams</label> <br>
+              </div>
+
+              <div class="inputGroup">
+                <input type="checkbox" id="base" name="base" value="osmTile" checked
+                  onchange="handleLayerToggle(event)">
+                <label for="Base">OSM</label> <br>
+              </div>
+            </form>
+
+          </li>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">pin_drop</span>
+
+          </li>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">filter_alt</span>
+
+          </li>
+          <li class="sidebar_items">
+            <span class="material-symbols-outlined">info</span>
+
+          </li>
+        </ul>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div id="base_layer_container">
+    <div id="base_layer_container_icon" onclick="display_toggle_block('base_layer_menu')"></div>
+    <div id="base_layer_menu" >
+      <ul id="base_layer_list">
+        <li> <label for="">Standard</label>  <img src="./modules/standardmapimg.jpeg" alt=""> </li>
+        <li> <label for="">CycleOSM</label>  <img src="./modules/osmmapimg.png" alt=""> </li>
+        <li> <label for="">Transport</label>  <img src="./modules/streetmapimg.avif" alt=""> </li>
+        <li> <label for="">Humanitarian</label>  <img src="./modules/humanEmapimg.png" alt=""> </li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="mesure_scale">
+    <img src="./modules/measurescaleimg.png" alt="">
+
+  </div>
+
+  <div id="legend">
+    <div>
+      <table>
+        <tr>
+          <th>Symbol</th>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>Name</th>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div id="long_lat">
+        <p>Lat/Long :</p>
+        <input type="text" disabled>
+        <input type="text" disabled>
+      </div>
+      <div id="org_info">
+        <p> designed and Developed by ASSAC. &copy; 2024</p>
+      </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  <!-- <div id="main-container">
+
+    <nav id="navbar">
+      <div id="logo">
+        <img src="https://assac.in/img/fav.png" alt="">
+      </div>
+
+      <div id="navbar_text">
+        <h2>ASSAM STATE SPACE APPLICATION CENTER </h2>
+      </div>
+
+    </nav>
+
+
+    <div id="sidebar">
+
+      <div id="layers_container">
+        <i onclick="layer_Icon_click()" id="layer_Icon"> <span class="material-symbols-outlined">stacks</span></i>
+        <div id="layer_list">
+
+
+          <div class="inputGroup">
+            <input type="checkbox" id="Districts" name="Districts" value="india_ds_pgis"
+              onchange="handleLayerToggle(event)">
+            <label for="Districts">Districts</label> <br>
+          </div>
+
+          <div class="inputGroup">
+            <input type="checkbox" id="rivers" name="rivers" value="rivers_pgis" onchange="handleLayerToggle(event)">
+            <label for="rivers">rivers</label> <br>
+          </div>
+
+          <div class="inputGroup">
+            <input type="checkbox" id="india_st" name="india_st" value="india_st_pgis"
+              onchange="handleLayerToggle(event)">
+            <label for="india_st">india states</label> <br>
+          </div>
+
+          <div class="inputGroup">
+            <input type="checkbox" id="dams" name="dams" value="indian_dams" onchange="handleLayerToggle(event)">
+            <label for="dams">dams</label> <br>
+          </div>
+
+          <div class="inputGroup">
+            <input type="checkbox" id="base" name="base" value="osmTile" checked onchange="handleLayerToggle(event)">
+            <label for="Base">OSM</label> <br>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+    <div id="tools">
+      <ul>
+        <li>
+
+
+        <li onclick="handleMesureToggle(event)" class="measure_tool_options">
+          <span class="material-symbols-outlined" id="LineString" value="LineString">straighten</span>
+        </li>
+        <li onclick="handleMesureToggle(event)" class="measure_tool_options">
+          <span class="material-symbols-outlined" id="Polygon" value="Polygon">square_foot</span>
+        </li>
+        <li onclick="handleMesureToggle(event)" class="measure_tool_options">
+          <span class="material-symbols-outlined" id="erase_icon" value="erase_icon">ink_eraser</span>
+        </li>
+        </li>
+
+
+
+      </ul>
+    </div>
+
+    <div id="">
+
+      <form>
+        <label for="type">Geometry type &nbsp;</label>
+        <select id="type">
+          <option value="Point">Point</option>
+          <option value="LineString">LineString</option>
+          <option value="Polygon">Polygon</option>
+          <option value="Circle">Circle</option>
+        </select>
+      </form>
+
+
+      <form id="tool_form" style="display: none;">
+
+        <label for="type">Measurement type </label>
+        <select id="type">
+          <option value="none">None</option>
+          <option value="LineString">Length (LineString)</option>
+          <option value="Polygon">Area (Polygon)</option>
+        </select>
+        <br>
+        <label for="segments">Show segment lengths:</label>
+        <input type="checkbox" id="segments" />
+        <br>
+        <label for="clear">Clear previous measure:</label>
+        <input type="checkbox" id="clear" />
+      </form>
+    </div> -->
+
+
+  <div id="map-view">
+    <div id="map"></div>
+  </div>
+
+  </div>
+
+  <script type="module" src="./main.js"></script>
+
+  <script src="./custom.js"></script>
+
+
+</body>
+
+</html>
